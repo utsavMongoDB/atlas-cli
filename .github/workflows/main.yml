@@ -23,6 +23,8 @@ jobs:
             --provider AWS 
             --region US_EAST_1 
             --tier M0
+            --username admin 
+            --password Passw0rd 
 
     - name: Watch for update
       run: |
