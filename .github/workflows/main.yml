@@ -18,6 +18,7 @@ jobs:
         MONGODB_ATLAS_PUBLIC_API_KEY: pywlbqma
         MONGODB_ATLAS_PRIVATE_API_KEY: da321f76-78c4-4448-9552-3b9bbdc6acef
       run: |
+        atlas auth login --publicApiKey $MONGODB_ATLAS_PUBLIC_API_KEY --privateApiKey $MONGODB_ATLAS_PRIVATE_API_KEY
         atlas auth whoami
     
 #     - name: Atlas create cluster
