@@ -20,16 +20,16 @@ jobs:
       run: |
         atlas config set public_api_key pywlbqma
         atlas config set private_api_key da321f76-78c4-4448-9552-3b9bbdc6acef
-        atlas whoami
-#     - name: Atlas create cluster
-#       run: |
-#         atlas quickstart 
-#         --clusterName github-actions 
-#         --provider AWS 
-#         --region US_EAST_1 
-#         --username testUser 
-#         --password passWord 
-#         --skipSampleData
+
+    - name: Atlas create cluster
+      run: |
+        atlas quickstart 
+        --clusterName github-actions 
+        --provider AWS 
+        --region US_EAST_1 
+        --username testUser 
+        --password passWord 
+        --skipSampleData
 
     - name: Watch for update
       run: |
