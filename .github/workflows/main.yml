@@ -23,4 +23,3 @@ jobs:
         echo '{"name":"s-cluster","clusterType":"REPLICASET","mongoDBVersion":"6.0","autoScaling":{"compute":{"enabled":true,"scaleDownEnabled":true}},"backupEnabled":true,"providerSettings":{"providerName":"AZURE","autoScaling":{"compute":{"maxInstanceSize":"M30","minInstanceSize":"M10"}}},"replicationSpecs":[{"regionConfigs":[{"electableSpecs":{"instanceSize":"M10","nodeCount":2},"priority":7,"providerName":"AZURE","regionName":"US_EAST_2"},{"electableSpecs":{"instanceSize":"M10","nodeCount":1},"priority":6,"providerName":"AZURE","regionName":"US_CENTRAL"}]}]}' > config.json
         atlas clusters create --file ./config.json --projectId 62c679e0f373002ad29fdc35
         atlas clusters watch s-cluster --projectId 62c679e0f373002ad29fdc35
-        atlas watch
