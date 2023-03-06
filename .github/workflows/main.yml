@@ -19,8 +19,9 @@ jobs:
         MONGODB_ATLAS_PRIVATE_API_KEY: da321f76-78c4-4448-9552-3b9bbdc6acef
       run: |
         atlas config init
-        atlas auth whoami
-    
+        
+        
+        
 #     - name: Atlas create cluster
 #       run: |
 #         atlas quickstart 
@@ -33,4 +34,4 @@ jobs:
 
     - name: Watch for update
       run: |
-        atalas watch
+        atlas watch
