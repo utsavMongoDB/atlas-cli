@@ -23,13 +23,9 @@ jobs:
 
     - name: Atlas create cluster
       run: |
-        atlas quickstart 
-        --clusterName github-actions 
-        --provider AWS 
-        --region US_EAST_1 
-        --username testUser 
-        --password passWord 
-        --skipSampleData
+        atlas cluster create myCluster --projectId 5e2211c17a3e5a48f5497de3 --provider AWS --region US_EAST_1 --tier M0
+
+
 
     - name: Watch for update
       run: |
