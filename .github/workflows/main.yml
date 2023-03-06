@@ -20,6 +20,5 @@ jobs:
         MONGODB_ATLAS_PROJECT_ID: 63ce633b2653634b36dea38b
       run: |
         set -ex
-        atlas config set public_api_key pywlbqma
-        atlas cluster create myCluster --provider AWS --region US_EAST_1 --tier M0 --accessListIp "0.0.0.0/0"
+        atlas quickstart --skipMongosh --skipSampleData --provider AWS --region US_EAST_1 --tier M0 --username admin --password Passw0rd --clusterName MyCustomers 
         atlas watch
