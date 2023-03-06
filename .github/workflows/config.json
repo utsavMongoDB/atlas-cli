@@ -1,0 +1,31 @@
+{
+  "name": "s-cluster",
+  "clusterType": "REPLICASET",
+  "mongoDBVersion": "6.0",
+  "autoScaling": { "compute": { "enabled": true, "scaleDownEnabled": true } },
+  "backupEnabled": true,
+  "providerSettings": {
+    "providerName": "AZURE",
+    "autoScaling": {
+      "compute": { "maxInstanceSize": "M30", "minInstanceSize": "M10" }
+    }
+  },
+  "replicationSpecs": [
+    {
+      "regionConfigs": [
+        {
+          "electableSpecs": { "instanceSize": "M10", "nodeCount": 2 },
+          "priority": 7,
+          "providerName": "AZURE",
+          "regionName": "US_EAST_2"
+        },
+        {
+          "electableSpecs": { "instanceSize": "M10", "nodeCount": 1 },
+          "priority": 6,
+          "providerName": "AZURE",
+          "regionName": "US_CENTRAL"
+        }
+      ]
+    }
+  ]
+}
