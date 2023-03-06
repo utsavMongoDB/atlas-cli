@@ -18,17 +18,17 @@ jobs:
         MONGODB_ATLAS_PUBLIC_API_KEY: pywlbqma
         MONGODB_ATLAS_PRIVATE_API_KEY: da321f76-78c4-4448-9552-3b9bbdc6acef
       run: |
-        atlas auth status
+        atlas auth whoami
     
-    - name: Atlas create cluster
-      run: |
-        atlas quickstart 
-        --clusterName github-actions 
-        --provider AWS 
-        --region US_EAST_1 
-        --username testUser 
-        --password passWord 
-        --skipSampleData
+#     - name: Atlas create cluster
+#       run: |
+#         atlas quickstart 
+#         --clusterName github-actions 
+#         --provider AWS 
+#         --region US_EAST_1 
+#         --username testUser 
+#         --password passWord 
+#         --skipSampleData
 
     - name: Watch for update
       run: |
