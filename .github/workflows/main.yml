@@ -1,0 +1,30 @@
+name: Create Atlas Cluster
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  create-cluster:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Atlas CLI
+      run: |
+        curl -L https://downloads.mongodb.com/on-prem-mms/cli/mongodb-mms-100.5.0.0-1.x86_64.deb -o mongodb-mms.deb
+        sudo dpkg -i mongodb-mms.deb
+    - name: Create Atlas Cluster
+      env:
+        ATLAS_PUBLIC_KEY: pywlbqma
+        ATLAS_PRIVATE_KEY: da321f76-78c4-4448-9552-3b9bbdc6acef
+      run: |
+        atlas-cli cloud create-cluster \
+          --provider AWS \
+          --region us-east-1 \
+          --name my-cluster \
+          --tier M0 \
+          --username admin \
+          --password admin123 \
+          --project-id my-project-id
+    - name: Watch for update
+      run:  atalas watch
