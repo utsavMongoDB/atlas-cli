@@ -20,5 +20,6 @@ jobs:
         MONGODB_ATLAS_PROJECT_ID: 63ce633b2653634b36dea38b
       run: |
         set -ex
-        atlas quickstart --skipMongosh --skipSampleData --provider AWS --region US_EAST_1 --tier M0 --username admin --password Passw0rd --clusterName MyCustomers --accessListIp "0.0.0.0/0" --force
+        atlas clusters create --file ./config.json --projectId 6267bec7e6ecef5ca1f56270
+        atlas clusters watch s-cluster --projectId 6267bec7e6ecef5ca1f56270
         atlas watch
