@@ -20,10 +20,7 @@ jobs:
         MONGODB_ATLAS_PROJECT_ID: 63ce633b2653634b36dea38b
       run:
         atlas config set public_api_key pywlbqma
-        atlas config set private_api_key da321f76-78c4-4448-9552-3b9bbdc6acef
-        atlas config set project_id 63ce633b2653634b36dea38b
-        atlas config set org_id 62b59ee16bc2a54e6c7d4c67
-
+        
     - name: Atlas create cluster
       run: |
         atlas cluster create myCluster --projectId 5e2211c17a3e5a48f5497de3 --provider AWS --region US_EAST_1 --tier M0
