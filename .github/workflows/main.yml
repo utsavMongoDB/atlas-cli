@@ -20,5 +20,5 @@ jobs:
         MONGODB_ATLAS_PROJECT_ID: ${{ secrets.MONGODB_ATLAS_PROJECT_ID }}
       run: |
         set -ex
-        atlas clusters create --file config.json --projectId 62c679e0f373002ad29fdc35
-        atlas clusters watch s-cluster1 --projectId 62c679e0f373002ad29fdc35
+        atlas clusters create --file .github/workflows/config.json
+        atlas clusters watch s-cluster1 --projectId ${{ secrets.MONGODB_ATLAS_PROJECT_ID }}
