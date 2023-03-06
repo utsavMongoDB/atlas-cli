@@ -21,5 +21,5 @@ jobs:
       run: |
         set -ex
         atlas config set public_api_key pywlbqma
-        atlas cluster create myCluster --orgId 62b59ee16bc2a54e6c7d4c67 --projectId 63ce633b2653634b36dea38b --provider AWS --region US_EAST_1 --tier M0
+        atlas cluster create myCluster --projectId 63ce633b2653634b36dea38b --provider AWS --region US_EAST_1 --tier M0
         atlas watch
