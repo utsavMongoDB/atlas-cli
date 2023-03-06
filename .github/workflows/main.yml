@@ -20,7 +20,7 @@ jobs:
         MONGODB_ATLAS_PROJECT_ID: 63ce633b2653634b36dea38b
       run: |
         set -ex
-        echo '{"name":"s-cluster","clusterType":"REPLICASET","mongoDBVersion":"6.0","autoScaling":{"compute":{"enabled":true,"scaleDownEnabled":true}},"backupEnabled":true,"providerSettings":{"providerName":"AZURE","autoScaling":{"compute":{"maxInstanceSize":"M30","minInstanceSize":"M10"}}},"replicationSpecs":[{"regionConfigs":[{"electableSpecs":{"instanceSize":"M10","nodeCount":2},"priority":7,"providerName":"AZURE","regionName":"US_EAST_2"},{"electableSpecs":{"instanceSize":"M10","nodeCount":1},"priority":6,"providerName":"AZURE","regionName":"US_CENTRAL"}]}]}' > config.json
+        echo '{"name":"s-cluster","clusterType":"REPLICASET","mongoDBVersion":"6.0","autoScaling":{"compute":{"enabled":true,"scaleDownEnabled":true}},"backupEnabled":true,"providerSettings":{"providerName":"AZURE","autoScaling":{"compute":{"maxInstanceSize":"M0","minInstanceSize":"M0"}}},"replicationSpecs":[{"regionConfigs":[{"electableSpecs":{"instanceSize":"M0","nodeCount":2},"priority":7,"providerName":"AZURE","regionName":"US_EAST_2"},{"electableSpecs":{"instanceSize":"M10","nodeCount":1},"priority":6,"providerName":"AZURE","regionName":"US_CENTRAL"}]}]}' > config.json
         atlas clusters create --file ./config.json --projectId 63ce633b2653634b36dea38b
         atlas clusters watch s-cluster --projectId 63ce633b2653634b36dea38b
         atlas watch
