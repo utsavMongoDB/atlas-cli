@@ -18,13 +18,12 @@ jobs:
         ATLAS_PUBLIC_KEY: pywlbqma
         ATLAS_PRIVATE_KEY: da321f76-78c4-4448-9552-3b9bbdc6acef
       run: |
-        atlas-cli cloud create-cluster \
-          --provider AWS \
-          --region us-east-1 \
-          --name my-cluster \
-          --tier M0 \
-          --username admin \
-          --password admin123 \
-          --project-id my-project-id
+        atlas cluster create \
+            myCluster 
+            --provider AWS 
+            --region US_EAST_1 
+            --tier M0
+
     - name: Watch for update
-      run:  atalas watch
+      run: |
+        atalas watch
