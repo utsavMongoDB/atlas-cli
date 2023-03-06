@@ -21,4 +21,4 @@ jobs:
       run: |
         set -ex
         atlas clusters create --file .github/workflows/config.json
-        atlas clusters watch s-cluster1 --projectId ${{ secrets.MONGODB_ATLAS_PROJECT_ID }}
+        atlas clusters watch s-cluster --projectId ${{ secrets.MONGODB_ATLAS_PROJECT_ID }}
