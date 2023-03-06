@@ -15,9 +15,9 @@ jobs:
         sudo dpkg -i mongodb-mms.deb
     - name: Atlas Login;
       env:
-        MONGODB_ATLAS_PUBLIC_API_KEY: ezdzobko
-        MONGODB_ATLAS_PRIVATE_API_KEY: 6dfb8cd4-1746-460f-87f7-12c9396d26bf
-        MONGODB_ATLAS_PROJECT_ID: 62c679e0f373002ad29fdc35
+        MONGODB_ATLAS_PUBLIC_API_KEY: ${{ secrets.MONGODB_ATLAS_PUBLIC_API_KEY }}
+        MONGODB_ATLAS_PRIVATE_API_KEY: ${{ secrets.MONGODB_ATLAS_PRIVATE_API_KEY }}
+        MONGODB_ATLAS_PROJECT_ID: ${{ secrets.MONGODB_ATLAS_PROJECT_ID }}
       run: |
         set -ex
         echo '{"name":"s-cluster","clusterType":"REPLICASET","mongoDBVersion":"6.0","autoScaling":{"compute":{"enabled":true,"scaleDownEnabled":true}},"backupEnabled":true,"providerSettings":{"providerName":"AZURE","autoScaling":{"compute":{"maxInstanceSize":"M30","minInstanceSize":"M10"}}},"replicationSpecs":[{"regionConfigs":[{"electableSpecs":{"instanceSize":"M10","nodeCount":2},"priority":7,"providerName":"AZURE","regionName":"US_EAST_2"},{"electableSpecs":{"instanceSize":"M10","nodeCount":1},"priority":6,"providerName":"AZURE","regionName":"US_CENTRAL"}]}]}' > config.json
