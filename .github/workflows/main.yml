@@ -18,6 +18,7 @@ jobs:
         ATLAS_PUBLIC_KEY: pywlbqma
         ATLAS_PRIVATE_KEY: da321f76-78c4-4448-9552-3b9bbdc6acef
       run: |
+        atlas config init
         atlas cluster create \
             myCluster 
             --provider AWS 
