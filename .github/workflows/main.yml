@@ -13,19 +13,24 @@ jobs:
       run: |
         curl -L https://fastdl.mongodb.org/mongocli/mongodb-atlas-cli_1.5.0_linux_x86_64.deb -o mongodb-mms.deb
         sudo dpkg -i mongodb-mms.deb
-    - name: Create Atlas Cluster
+    - name: Atlas Login
       env:
-        ATLAS_PUBLIC_KEY: pywlbqma
-        ATLAS_PRIVATE_KEY: da321f76-78c4-4448-9552-3b9bbdc6acef
+        MONGODB_ATLAS_PUBLIC_API_KEY: pywlbqma
+        MONGODB_ATLAS_PRIVATE_API_KEY: da321f76-78c4-4448-9552-3b9bbdc6acef
       run: |
-        atlas config init
-        atlas cluster create \
-            myCluster 
-            --provider AWS 
-            --region US_EAST_1 
-            --tier M0
-            --username admin 
-            --password Passw0rd 
+        atlas auth login 
+        --publicApiKey $MONGODB_ATLAS_PUBLIC_API_KEY 
+        --privateApiKey $MONGODB_ATLAS_PRIVATE_API_KEY
+    
+    - name: Atlas create cluster
+      run: |
+        atlas quickstart 
+        --clusterName github-actions 
+        --provider AWS 
+        --region US_EAST_1 
+        --username testUser 
+        --password passWord 
+        --skipSampleData
 
     - name: Watch for update
       run: |
