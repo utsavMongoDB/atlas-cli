@@ -1,7 +1,7 @@
 {
   "name": "s-cluster",
   "clusterType": "REPLICASET",
-  "mongoDBVersion": "6.0",
+  "mongoDBMajorVersion": "6.0",
   "autoScaling": { "compute": { "enabled": true, "scaleDownEnabled": true } },
   "backupEnabled": true,
   "providerSettings": {
