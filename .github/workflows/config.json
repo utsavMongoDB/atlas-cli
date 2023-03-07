@@ -14,13 +14,13 @@
     {
       "regionConfigs": [
         {
-          "electableSpecs": { "instanceSize": "M10", "nodeCount": 2 },
+          "electableSpecs": { "instanceSize": "M20", "nodeCount": 2 },
           "priority": 7,
           "providerName": "AZURE",
           "regionName": "US_EAST_2"
         },
         {
-          "electableSpecs": { "instanceSize": "M10", "nodeCount": 1 },
+          "electableSpecs": { "instanceSize": "M20", "nodeCount": 1 },
           "priority": 6,
           "providerName": "AZURE",
           "regionName": "US_CENTRAL"
