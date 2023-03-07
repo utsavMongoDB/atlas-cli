@@ -3,7 +3,7 @@
   "clusterType": "REPLICASET",
   "mongoDBMajorVersion": "6.0",
   "autoScaling": { "compute": { "enabled": true, "scaleDownEnabled": true } },
-  "backupEnabled": true,
+  "backupEnabled": false,
   "providerSettings": {
     "providerName": "AZURE",
     "autoScaling": {
