@@ -7,7 +7,7 @@
   "providerSettings": {
     "providerName": "AZURE",
     "autoScaling": {
-      "compute": { "maxInstanceSize": "M30", "minInstanceSize": "M10" }
+      "compute": { "maxInstanceSize": "M30", "minInstanceSize": "M20" }
     }
   },
   "replicationSpecs": [
